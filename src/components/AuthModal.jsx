@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import gsap from 'gsap';
 
-const CORRECT_DOB = '20051213';
+const CORRECT_DOB = '20041213';
 
 const normalizeInput = (input) => {
     return input.replace(/[^0-9]/g, '');
