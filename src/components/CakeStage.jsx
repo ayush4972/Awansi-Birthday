@@ -4,15 +4,10 @@ import Cake from './Cake';
 import Candle from './Candle';
 import Confetti from './Confetti';
 
-import bouquetImg from '../assets/bouquet.png';
+
 
 const CakeStage = () => {
-    // Random position for the bouquet calculated once on mount
-    const [bouquetPos] = useState(() => ({
-        top: Math.floor(Math.random() * 70 + 15) + '%', // Random top between 15% and 85%
-        left: Math.floor(Math.random() * 70 + 15) + '%', // Random left between 15% and 85%
-        rotation: Math.floor(Math.random() * 40 - 20) + 'deg' // Random rotation +/- 20deg
-    }));
+
 
     const [candleLit, setCandleLit] = useState(true);
     const [canCut, setCanCut] = useState(false);
@@ -79,19 +74,7 @@ const CakeStage = () => {
         <div ref={containerRef} className="w-full h-full flex flex-col items-center justify-center relative overflow-hidden bg-white">
             <Confetti ref={confettiRef} />
 
-            {/* Random Bouquet */}
-            <img
-                src={bouquetImg}
-                alt="Bouquet of lilies and sunflowers"
-                className="absolute z-0 opacity-90 pointer-events-none drop-shadow-xl"
-                style={{
-                    top: bouquetPos.top,
-                    left: bouquetPos.left,
-                    transform: `translate(-50%, -50%) rotate(${bouquetPos.rotation})`,
-                    width: '18rem', // "Normal size"
-                    maxWidth: '40vw'
-                }}
-            />
+
 
             <div className="relative flex items-center justify-center w-full h-full">
                 {/* Heading centered over the cake */}
