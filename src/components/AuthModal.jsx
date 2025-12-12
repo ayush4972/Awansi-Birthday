@@ -1,5 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react';
 import gsap from 'gsap';
+import bouquetImg from '../assets/bouquet.png';
 
 const CORRECT_DOB = '20041213';
 
@@ -46,8 +47,12 @@ const AuthModal = ({ onAuthenticated }) => {
     };
 
     return (
-        <div className="fixed inset-0 w-screen h-screen flex items-center justify-center z-50 bg-white/80 backdrop-blur-sm">
-            <div ref={containerRef} className="flex flex-col items-center justify-center p-8">
+        <div
+            className="fixed inset-0 w-screen h-screen flex items-center justify-center z-50 bg-cover bg-center"
+            style={{ backgroundImage: `url(${bouquetImg})` }}
+        >
+            <div className="absolute inset-0 bg-white/60 backdrop-blur-sm"></div>
+            <div ref={containerRef} className="relative z-10 flex flex-col items-center justify-center p-8">
                 <h1 className="text-5xl md:text-7xl font-bold text-gray-800 mb-12 drop-shadow-sm">Enter Birthday</h1>
                 <form onSubmit={handleSubmit} className="flex flex-col gap-8 items-center w-full max-w-md">
                     <div className="relative w-full">
